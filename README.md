@@ -1,41 +1,18 @@
-#waynemashudu
-my SequentialDialogs code space
-
 import javax.swing.JOptionPane;
 
 public class Waynegift {
 
     public static void main(String[] args) {
         
-        // Get student name from the first dialog
-        String studentName = JOptionPane.showInputDialog(
-            null,
-            "Enter your student name:",
-            "Step 1",
-            JOptionPane.QUESTION_MESSAGE
-        );
-
-        // Make sure the input isn't empty or canceled
-        if (studentName != null && !studentName.trim().isEmpty()) {
-            
-            // Show welcome message if valid name was entered
-            JOptionPane.showMessageDialog(
-                null,
-                "Welcome to the system, " + studentName.trim() + "!",
-                "Step 2",
-                JOptionPane.INFORMATION_MESSAGE
-            );
-
-        } else {
-            
-            // Display error message if blank or canceled
-            JOptionPane.showMessageDialog(
-                null,
-                "Error: No name was entered.",
-                "Error",
-                JOptionPane.ERROR_MESSAGE
-            );
-
-        }
+        // First dialog: ask the user to think of a number
+        JOptionPane.showMessageDialog(null, "Think of a number between 1 and 10.");
+        
+        // Generate a random number from 1 to 10
+        int randomNumber = 1 + (int)(Math.random() * 10);
+        
+        // Second dialog: show the generated number
+        JOptionPane.showMessageDialog(null, "The number is " + randomNumber);
+        
     }
 }
+
